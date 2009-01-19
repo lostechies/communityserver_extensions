@@ -43,10 +43,18 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\CommunityServer.Controls.DLL</HintPath>
     </Reference>
+    <Reference Include="CommunityServer.Spam, Version=4.0.30619.63, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\CommunityServer.Spam.DLL</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telligent.Components, Version=1.0.20810.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Telligent.Components.dll</HintPath>
+    </Reference>
     <Reference Include="Telligent.DynamicConfiguration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Telligent.DynamicConfiguration.dll</HintPath>
@@ -55,9 +63,6 @@
   <ItemGroup>
     <Compile Include="Fragments\BlogrollFragment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SpamRules\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

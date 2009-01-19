@@ -35,9 +35,15 @@ namespace Lostechies.CS.Fragments
             CommunityServer.Controls.SectionQuery query = new CommunityServer.Controls.SectionQuery();
             query.SortBy = (SectionSortBy)Enum.Parse(typeof(SectionSortBy), "Name");
             query.SortOrder = (SortOrder)Enum.Parse(typeof(SortOrder), "Ascending");
+            query.PagerID = "PagerID";
+            query.PageSize = 100;
             weblogList.QueryOverrides = query;
             weblogList.ItemTemplate = new WrappedControlItemTemplate(BindWeblogListContent, CreateWeblogListContentControls);
             control.Controls.Add(weblogList);
+
+            PostbackPager pager = new PostbackPager();
+            pager.ID = "PagerID";
+            control.Controls.Add(pager);
 
             control.Controls.Add(new LiteralControl("</div>"));
         }
@@ -94,7 +100,7 @@ namespace Lostechies.CS.Fragments
         public override PropertyGroup[] GetPropertyGroups()
         {
             PropertyGroup group = new PropertyGroup("group1", "Options", 0);
-            Property widgetName = new Property("widgetName", "Widget Name", PropertyType.String, 0, "");
+            Property widgetName = new Property("widgetName", "Widget Name", PropertyType.String, 0, fragmentName);
             group.Properties.Add(widgetName);
             return new[] { group };
         }
